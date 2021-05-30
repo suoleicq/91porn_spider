@@ -55,8 +55,9 @@ class spider():
         return url
 
     def list_page(self,url,pages):
+        o_url = url
         for i in range(1,int(pages)+1):
-            url = url+str(i)
+            url = o_url+str(i)
             res = requests.get(url,headers=headers)
             if res.status_code==200:
                 print(url)
